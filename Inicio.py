@@ -6,7 +6,7 @@ from datetime import datetime
 
 # Page configuration
 st.set_page_config(
-    page_title="Análisis de Sensores - Mi Ciudad",
+    page_title="Análisis de Sensores - Medellín",
     page_icon="📊",
     layout="wide"
 )
@@ -24,10 +24,10 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 # Title and description
-st.title('📊 Análisis de datos de Sensores en Mi Ciudad')
+st.title('📊 Análisis de datos de Sensores en Medellín')
 st.markdown("""
     Esta aplicación permite analizar datos de temperatura y humedad
-    recolectados por sensores de temperatura y humedad en diferentes puntos de la ciudad.
+    recolectados por sensores de temperatura y humedad en diferentes puntos de la ciudad de Medellín.
 """)
 
 # Create map data for EAFIT
@@ -52,7 +52,7 @@ if uploaded_file is not None:
         # Renombrar columnas para simplificar
         column_mapping = {
             'temperatura {device="ESP32", name="Sensor 1"}': 'temperatura',
-            'humedad {device="ESP32", name="Sensor 1"}': 'humedad'
+            'humedad {device="ESP32", name="Sensor 2"}': 'humedad'
         }
         df1 = df1.rename(columns=column_mapping)
         
