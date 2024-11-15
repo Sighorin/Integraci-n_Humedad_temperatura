@@ -26,8 +26,8 @@ st.markdown("""
 # Title and description
 st.title('📊 Análisis de datos de Sensores en Medellín')
 st.markdown("""
-    Esta aplicación permite analizar datos de temperatura y humedad
-    recolectados por sensores de temperatura y humedad en diferentes puntos de la ciudad de Medellín.
+    Con esta aplicación podrás analizar datos de temperatura y humedad
+    recolectados por sensores de temperatura y humedad en diferentes puntos de la Universidad EAFIT.
 """)
 
 # Create map data for EAFIT
