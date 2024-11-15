@@ -51,8 +51,8 @@ if uploaded_file is not None:
         
         # Renombrar columnas para simplificar
         column_mapping = {
-            'temperatura {device="ESP32", name="Sensor 1"}': 'temperatura',
-            'humedad {device="ESP32", name="Sensor 2"}': 'humedad'
+            'temperatura {device="ESP32", name="temp"}': 'temperatura',
+            'humedad {device="ESP32", name="Hum"}': 'humedad'
         }
         df1 = df1.rename(columns=column_mapping)
         
@@ -74,7 +74,7 @@ if uploaded_file is not None:
             # Chart type selector
             chart_type = st.selectbox(
                 "Seleccione tipo de gráfico",
-                ["Línea", "Área", "Barra"]
+                ["Línea", "Área", "Barra", "Pastel"]
             )
             
             # Create plot based on selection
@@ -84,6 +84,8 @@ if uploaded_file is not None:
                     st.line_chart(df1["temperatura"])
                 elif chart_type == "Área":
                     st.area_chart(df1["temperatura"])
+                elif chart_type == "Pastel":
+                    st.pie_chart(df1["temperatura"])
                 else:
                     st.bar_chart(df1["temperatura"])
                     
@@ -92,6 +94,8 @@ if uploaded_file is not None:
                     st.line_chart(df1["humedad"])
                 elif chart_type == "Área":
                     st.area_chart(df1["humedad"])
+                elif chart_type == "Pastel":
+                    st.pie_chart(df1["humedad"])
                 else:
                     st.bar_chart(df1["humedad"])
             else:
@@ -99,6 +103,8 @@ if uploaded_file is not None:
                     st.line_chart(df1[variable])
                 elif chart_type == "Área":
                     st.area_chart(df1[variable])
+                elif chart_type == "Pastel":
+                    st.pie_chart(df1["variable"])
                 else:
                     st.bar_chart(df1[variable])
 
